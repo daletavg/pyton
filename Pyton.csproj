@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A5A92B61-A805-49F3-B2EB-D5DDCF1B7EDC}</ProjectGuid>
+    <ProjectGuid>{B970C5C2-4C9D-4D17-9E49-AA6F1784C078}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Pyton</RootNamespace>
     <AssemblyName>Pyton</AssemblyName>

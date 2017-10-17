@@ -6,22 +6,52 @@ using System.Threading.Tasks;
 
 namespace Pyton
 {
+    struct Apples
+    {
+        public int X { set; get; }
+        public int Y { set; get; }
+    }
     class Field
     {
+
         private delegate void FieldDel(int w,int h);
         private int width;
         private int height;
         private bool isGenerate = false;
-        void AppleGenerator(ref List<BlockOfSnake> snake)
+        private Apples apple;
+        public Apples Apple
+        {
+            get
+            {
+                return apple;
+            }
+        }
+
+        public Field(int w, int h)
+        {
+            SetRect(w, h);
+        }
+        public void AppleGenerator(ref List<BlockOfSnake> snake)
         {
             if (isGenerate)
             {
+                Random rnd = new Random();
+                bool isSnake = false;
+                Apples ap = new Apples();
+                ap.X = rnd.Next(1, width - 1);
+                ap.Y = rnd.Next(1, height - 1);
                 for (int i = 0; i < snake.Count; i++)
                 {
-                    if ()
+                    if (ap.X==snake[i].X&& ap.Y == snake[i].Y)
                     {
-
+                        isSnake = true;
+                        break;
                     }
+                }
+                if (!isSnake)
+                {
+                    isGenerate = false;
+                    apple = ap;
                 }
             }
         }
@@ -55,7 +85,7 @@ namespace Pyton
                 return height;
             }
         }
-        void SetRect(int w, int h)
+        public void SetRect(int w, int h)
         {
             Widht = w;
             Height = h;

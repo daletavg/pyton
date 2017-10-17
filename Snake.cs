@@ -11,7 +11,7 @@ namespace Pyton
     
     class Snake
     {
-        private delegate void SnakeDel(ref List<BlockOfSnake> snake);
+        public delegate void SnakeDel(ref List<BlockOfSnake> snake);
         List<BlockOfSnake> listOfSnake = new List<BlockOfSnake>();
         Direction direction;
         public Direction Dir
@@ -27,14 +27,14 @@ namespace Pyton
         }
 
         public Direction RIGHT { get; private set; }
-        Snake(int posx,int posy,int pWidth,int pHeight)
+        public Snake(int posx,int posy,int pWidth,int pHeight)
         {
             BlockOfSnake.SetBorder(pWidth, pHeight);
             listOfSnake.Add(new BlockOfSnake(posx, posy));
             listOfSnake[0].Dir = RIGHT;
             Dir = RIGHT;
         }
-        void SnakeUpdater(SnakeDel del)
+        public void SnakeUpdater(SnakeDel del)
         {
             del(ref listOfSnake);
         }
