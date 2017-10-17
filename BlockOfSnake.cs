@@ -10,6 +10,18 @@ namespace Pyton
     {
         private int posX;
         private int posY;
+        Direction direction;
+        public Direction Dir
+        {
+            set
+            {
+                direction = value;
+            }
+            get
+            {
+                return direction;
+            }
+        }
         public int X
         {
             set

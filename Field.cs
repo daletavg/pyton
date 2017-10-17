@@ -8,8 +8,23 @@ namespace Pyton
 {
     class Field
     {
+        private delegate void FieldDel(int w,int h);
         private int width;
         private int height;
+        private bool isGenerate = false;
+        void AppleGenerator(ref List<BlockOfSnake> snake)
+        {
+            if (isGenerate)
+            {
+                for (int i = 0; i < snake.Count; i++)
+                {
+                    if ()
+                    {
+
+                    }
+                }
+            }
+        }
         public int Widht
         {
             set
@@ -44,6 +59,11 @@ namespace Pyton
         {
             Widht = w;
             Height = h;
+        }
+
+        void Draw(FieldDel del)
+        {
+            del(Widht,Height);
         }
     }
 }
