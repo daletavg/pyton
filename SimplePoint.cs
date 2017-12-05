@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pyton
 {
-    class Program
+    class SimplePoint:ICoord
     {
-        static void Main(string[] args)
-        {
-            Game g = new Game();
-        }
+        public int X { set; get; }
+        public int Y { set; get; }
     }
 }

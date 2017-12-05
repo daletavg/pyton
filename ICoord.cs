@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pyton
 {
-    class Controlcs
+    interface ICoord
     {
+        int X { set; get; }
+        int Y { set; get; }
+        
     }
 }

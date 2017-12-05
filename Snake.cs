@@ -3,40 +3,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 
 namespace Pyton
 {
-    enum Direction { UP, RIGHT, DOWN, LEFT };
     
+   
     class Snake
     {
-        public delegate void SnakeDel(ref List<BlockOfSnake> snake);
-        List<BlockOfSnake> listOfSnake = new List<BlockOfSnake>();
-        Direction direction;
-        public Direction Dir
+        public event DrawDlg _draw;
+        private List<SnakePoint> _snake=new List<SnakePoint>();
+        public int X
         {
             set
             {
-                direction = value;
+                _snake[0].X=value;
             }
             get
             {
-                return direction;
+                return _snake[0].X;
             }
         }
-
-        public Direction RIGHT { get; private set; }
-        public Snake(int posx,int posy,int pWidth,int pHeight)
+        public int Y
         {
-            BlockOfSnake.SetBorder(pWidth, pHeight);
-            listOfSnake.Add(new BlockOfSnake(posx, posy));
-            listOfSnake[0].Dir = RIGHT;
-            Dir = RIGHT;
+            set
+            {
+                _snake[0].Y = value;
+            }
+            get
+            {
+                return _snake[0].Y;
+            }
         }
-        public void SnakeUpdater(SnakeDel del)
+       
+
+
+        public Snake()
         {
-            del(ref listOfSnake);
+            AddSnakePoint(5, 5);
+        }
+        public Snake(int X, int Y)
+        {
+            AddSnakePoint(X, Y);
+        }
+        public void AddSnakePoint(int X, int Y)
+        {
+            SnakePoint tmp = new SnakePoint();
+            tmp.X = X;
+            tmp.Y = Y;
+            tmp.PrevX = X;
+            tmp.PrevY = Y;
+            tmp.IsTail = true;
+            _snake.Add(tmp);
+        }
+        void Update()
+        {
+            if (_snake.Count>1)
+            {
+                for (int i = 0; i < _snake.Count; i++)
+                {
+                    if (i+1>=_snake.Count)
+                    {
+                        break;
+                    }
+                    _snake[i + 1].X = _snake[i].PrevX;
+                    _snake[i + 1].Y = _snake[i].PrevY;
+                }
+            }
+        }
+        public void Draw()
+        {
+            foreach (SnakePoint item in _snake)
+            {
+                _draw(item);
+            }
         }
 
     }

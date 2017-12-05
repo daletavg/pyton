@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pyton
 {
-    class Program
+    class Poly
     {
-        static void Main(string[] args)
-        {
-            Game g = new Game();
-        }
+        public int Width { set; get; }
+        public int Height { set; get; }
+
     }
 }

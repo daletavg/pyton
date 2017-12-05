@@ -1,1 +1,7 @@
 C:\Users\Dubr_kg66\Documents\Visual Studio 2017\Projects\Pyton\Pyton\obj\Debug\Pyton.csprojResolveAssemblyReference.cache
+C:\Users\akerz\Documents\Visual Studio 2017\Projects\pyton\pyton\bin\Debug\Pyton.exe.config
+C:\Users\akerz\Documents\Visual Studio 2017\Projects\pyton\pyton\bin\Debug\Pyton.exe
+C:\Users\akerz\Documents\Visual Studio 2017\Projects\pyton\pyton\bin\Debug\Pyton.pdb
+C:\Users\akerz\Documents\Visual Studio 2017\Projects\pyton\pyton\obj\Debug\pyton.csprojResolveAssemblyReference.cache
+C:\Users\akerz\Documents\Visual Studio 2017\Projects\pyton\pyton\obj\Debug\Pyton.exe
+C:\Users\akerz\Documents\Visual Studio 2017\Projects\pyton\pyton\obj\Debug\Pyton.pdb
